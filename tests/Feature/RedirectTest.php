@@ -45,6 +45,13 @@ class RedirectTest extends TestCase
         $click = LinkClick::first();
         $this->assertNotNull($click->ip_address);
         $this->assertNotNull($click->clicked_at);
+        $this->assertSame('Europe/Moscow', $click->clicked_at->timezone->getName());
+    }
+
+    public function test_app_timezone_is_configured(): void
+    {
+        $this->assertSame('Europe/Moscow', config('app.timezone'));
+        $this->assertSame('Europe/Moscow', now()->timezone->getName());
     }
 
     public function test_unknown_short_code_returns_404(): void
