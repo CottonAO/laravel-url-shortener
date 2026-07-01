@@ -103,6 +103,3 @@ tests/Feature/              # Feature-тесты
 | GET | `/{shortCode}` | Редирект на оригинальный URL |
 | GET | `/admin` | Личный кабинет Filament |
 
-## Лицензия
-
-MIT
